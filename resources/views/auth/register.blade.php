@@ -1,14 +1,20 @@
+<link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/PSU_logo.png") }}" />
+<title>Sign Up Page</title>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="#" title="Home"><img src="{{ url("../images/PSU_logo.png") }}"></a>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
+            <div style="display: grid; place-items:center; padding: 5px; font-weight:bold;">
+                <h2>Pangasinan State University(San Carlos Campus)</h2>
+                <p>Mental Health Intervention</p>
+                <p>Sign Up Page</p>
+            </div>
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />

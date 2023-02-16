@@ -1,10 +1,10 @@
+<link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/PSU_logo.png") }}" />
+<title>Login Page</title>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="#" title="Home"><img src="{{ url("../images/PSU_logo.png") }}"></a>
         </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -14,7 +14,12 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
+            <div style="display: grid; place-items:center; padding: 5px; font-weight:bold;">
+                <h2>Pangasinan State University(San Carlos Campus)</h2>
+                <p>Mental Health Intervention</p>
+                <p>Login Page</p>
+            </div>
+            <x-jet-validation-errors class="mb-2" />
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
@@ -33,12 +38,12 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
+                {{-- @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
-                @endif
-
+                @endif --}}
+                <a href="{{ route('register') }}">Create an account?</a>
                 <x-jet-button class="ml-4">
                     {{ __('Log in') }}
                 </x-jet-button>

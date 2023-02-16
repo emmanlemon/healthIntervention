@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/PSU_logo.png") }}" />
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -19,7 +19,7 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-red-100">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
