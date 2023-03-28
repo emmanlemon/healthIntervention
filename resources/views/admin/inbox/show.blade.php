@@ -10,11 +10,11 @@
 @extends('components.atom.index')
 @extends('components.molecule.sideBarNavigation')
 @section('sideBarNavigation')
-<section class="home-section">
+<section class="home-section" style="background-image: url('../images/PSU_background.jpg'); background-size: cover;">
     <div class="text">Admin Inbox <span class="glyphicon glyphicon-comment"></span></div>
     <div class="container" style="width: 90%;">
-            <div class="row">
-                    <div class="panel panel-primary">
+            <div class="row"> 
+                    <div class="panel panel-primary" style="background-color: rgba(255, 255, 255, 0.89);">
                         <div class="panel-head" id="accordion">
                             <span class="glyphicon glyphicon-comment"></span> Chat with Student
                         </div>

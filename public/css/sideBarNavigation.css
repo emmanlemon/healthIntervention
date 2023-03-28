@@ -266,3 +266,13 @@ li {
   color:white;
   letter-spacing:1px;
 }
+.table-response th , .table-response tr , .table-response td{
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px outset black;
+  padding: 2px;
+}
+.table-response th {
+background-color: #337ab7;
+color: white;
+}

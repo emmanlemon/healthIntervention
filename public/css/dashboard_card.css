@@ -1,0 +1,88 @@
+.container-dashboard {
+  display: flex;
+  gap: .5em;
+  margin-left: 1rem;
+}
+.card {
+  width: 230px;
+  height: 180px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+ }
+ 
+ .card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+ }
+ 
+ .card-button {
+  text-align: center;
+  text-decoration: none !important;
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .2rem .5rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+ }
+ 
+ .text-body {
+  color: rgb(134, 134, 134);
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-size: 1.5em;
+  font-weight: bold;
+ }
+ 
+ /*Hover*/
+ .card:hover {
+  border-color: #0300cd;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+ }
+ 
+ .card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+ }
+
+ .card-survey{
+  padding: 8px;
+  margin: 20px 0 10px 10px;
+  width: 90%;
+  height: 17rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: #212121 0.2rem solid;
+  transition: all 0.4s ease-in;
+  box-shadow: 0.2rem 0.2rem 0.4rem #0300cd;
+ }
+ 
+ .card-survey > * {
+  text-transform: capitalize;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 2px;
+ }
+ 
+ .card-survey:hover {
+  transform: translateY(-1.5rem);
+  border: #0300cd s0.2em solid;
+  border-radius: 2.5rem 0 2.5rem 0;
+ }

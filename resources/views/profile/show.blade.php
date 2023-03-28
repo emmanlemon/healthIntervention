@@ -13,16 +13,16 @@
 
 <!-- Styles -->
 @livewireStyles
-@extends(($request->user()->role == 1 ? 'components.molecule.sideBarNavigation' : 'components.molecule.sideBarNavigation' ))
+@extends(($request->user()->role == 1 ? 'components.molecule.sideBarNavigation' : 'components.molecule.sideBarNavigationStudent' ))
 @section('sideBarNavigation')
 <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-white">
             {{ __('Profile') }}
         </h2>
     </x-slot>
-    <section class="home-section">
-    <div>
-        <div class="max-w-8xl mx-auto py-10 sm:px-6 lg:px-8">
+    <section class="home-section" style="background-image: url('../images/background_user.jpg'); background-size: cover;">
+        <div>
+        <div class="py-10 mx-auto max-w-8xl sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 

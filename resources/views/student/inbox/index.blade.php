@@ -10,11 +10,11 @@
 @extends('components.atom.index')
 @extends('components.molecule.sideBarNavigationStudent')
 @section('sideBarNavigation')
-<section class="home-section">
+<section class="home-section" style="background-image: url('../images/background-student.jpg'); background-size: cover;">
     <div class="text">Student Inbox <span class="glyphicon glyphicon-comment"></span></div>
     <div class="container" style="width: 90%;">
             <div class="row">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary" style="background-color: rgba(255, 255, 255, 0.89);">
                         <div class="panel-head" id="accordion">
                             <span class="glyphicon glyphicon-comment"></span> Chat with Admin
                         </div>
@@ -22,14 +22,14 @@
                             <ul class="chat">
                                 @foreach ($chat as $chat)
                                     @if($chat->role == 1)
-                                    <li class="left clearfix"><span class="chat-img pull-left">
+                                    <li class="clearfix left"><span class="chat-img pull-left">
                                         @if(empty($chat->profile))
                                         <img src="{{ URL::Asset('../images/default_image.png') }}" alt="User Avatar" class="img-circle" style="margin-right: 10px; width: 90px; height:90px;"/>
                                         @else
                                         <img src="{{ URL::Asset("storage/".$chat->profile) }}" alt="User Avatar" class="img-circle" style="margin-right: 10px; width: 90px; height:90px;"/>
                                         @endif
                                     </span>
-                                        <div class="chat-body clearfix">
+                                        <div class="clearfix chat-body">
                                             <div class="header" style="margin-bottom: 5px;">
                                                 <strong class="primary-font text-capitalize">{{ $chat->name }}</strong> 
                                                 <small class="pull-right text-muted">
@@ -50,7 +50,7 @@
                                         <img src="{{ URL::Asset("storage/".$chat->profile) }}" alt="User Avatar" class="img-circle" style="margin-left: 10px; width: 90px; height:90px;"/>
                                         @endif
                                     </span>
-                                        <div class="chat-body clearfix">
+                                        <div class="clearfix chat-body">
                                             <div class="header" style="margin-bottom: 5px;">
                                                 <small class=" text-muted"><span class="glyphicon glyphicon-time"></span> {{ \Carbon\Carbon::parse($chat->created_at)->diffForHumans() }}</small>
                                                 <strong class="pull-right primary-font text-capitalize">{{ $chat->name }}</strong>
@@ -78,7 +78,7 @@
                             @if(Session::has('delete'))
                             <div class="alert alert-danger m-2s">{{ Session::get('delete') }}</div>
                             @elseif(Session::has('success'))
-                            <div class="alert alert-success m-2">{{ Session::get('success') }}</div>
+                            <div class="m-2 alert alert-success">{{ Session::get('success') }}</div>
                             @endif
                             @foreach ($admin as $admin)
                             <input type="hidden" name="receiver_id" value="{{ $admin->role }}">

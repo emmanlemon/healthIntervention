@@ -14,7 +14,7 @@ class HomeController extends Controller
             $role = Auth::user()->role;
             if($role == "0")
             {
-                return redirect('/student');
+                return redirect('/page/questionnaire');
             }
             else
             {

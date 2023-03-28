@@ -233,3 +233,36 @@
 .chat input {
     border-radius: 0;
 }
+#radio span {
+    text-transform: capitalize;
+    font-weight: 500;
+    color: black;
+    font-size: 1em;
+}
+.table-response{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+/* thead , tr ,th ,td{
+    text-transform: capitalize;
+    font-size: 1em;
+    padding: 10px;
+    border: 1px outset black;
+}
+th{
+    background-color: #f4f6fc;
+    text-transform: uppercase;
+    font-weight: 700; 
+    text-align: center;
+} */
+.header-response > *{
+    text-transform: capitalize;
+    font-size: 1.5em;
+    margin: 2px;
+    padding: 3px;
+}
+.container-survey p{
+    margin: 0;
+    padding: 1px;
+    font-size: 1.1em;
+}

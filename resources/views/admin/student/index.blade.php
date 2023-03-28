@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/sca_logo.png") }}" />
-    <title>Admin Student Dashboard</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/PSU_logo.png") }}" />
+  <title>Admin Student Dashboard</title>
 </head>
+<style>
+td{
+    border: none;
+  }
+</style>
 @extends('components.atom.index')
 @extends('components.molecule.sideBarNavigation')
 @section('sideBarNavigation')
-<section class="home-section">
-    <div class="text">Admin Student List<i class='bx bxs-user-circle'></i></div>
+<section class="home-section" style="background-image: url('../images/PSU_background.jpg'); background-size: cover;">
+  <div class="text">Admin Student List<i class='bx bxs-user-circle'></i></div>
     <div class="card-body-table">
         <table id="tblUsers" class="table table-hover table-responsive bg-white-100" style="font-size:12px; background-color: white;" cellspacing="0">
-          <div align="center" style="margin-bottom: 20px;" >  
+          {{-- <div align="center" style="margin-bottom: 20px;" >  
             </i><input type="text" name="search" id="search" class="form-control" placeholder="Search For Teacher Input Here ...." />  
-          </div>
+          </div> --}}
             <thead style="background-color: rgb(0, 0, 178); text-transform: uppercase; color: white; font-size: 1.2em;">
                 <tr>
                     <th>Profile Image</th>
@@ -39,7 +44,7 @@
                             @method('delete')
                             @csrf
                           </form>
-                          </div>
+                        </div>
                   </tr>
                 @endforeach
             </tbody>

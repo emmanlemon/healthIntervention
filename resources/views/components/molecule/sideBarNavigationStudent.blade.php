@@ -8,26 +8,8 @@
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list" style="padding-left:0;">
-      {{-- <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li> --}}
-      <li>
-        <a href="">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
-      </li>
-     {{-- <li>
-        <a href="#" style="background-color:#1d1010;">
-          <span class="links_name">Maintenance List</span>
-        </a>
-        <span class="tooltip">Maintenance List</span>
-      </li> --}}
      <li>
-       <a href="#">
+       <a href="{{ route('page' , 'questionnaire')}}">
          <i class='bx bx-folder' ></i>
          <span class="links_name">Questionnaire</span>
        </a>
@@ -41,7 +23,7 @@
       <span class="tooltip">Inbox</span>
     </li>
      <li>
-       <a href="">
+       <a href="{{ route('page' , 'information')}}">
         <i class='bx bxs-info-circle' ></i>
         <span class="links_name">Information</span>
        </a>
@@ -54,24 +36,21 @@
        </a>
        <span class="tooltip">Profile</span>
      </li>
-     {{-- <li>
-       <a href="{{ route('admin.page' , 'profile') }}">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Profile</span>
-       </a>
-       <span class="tooltip">Profile</span>
-     </li> --}}
      <li>
-          <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" style="background-color: red;  color: white;">
-                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                <span class="item" style="font-size: 1em;">Logout</span>
-            </button>
-        </form>
-          <i class='bx bx-log-out' ></i>
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" style="background-color:rgb(198, 198, 0); text-align:left; border-radius: 10px; width: 100%;">
+          <a>
+            <i class='bx bx-log-out' ></i>
+            <span class="links_name">Logout</span>
+           </a>
+           <span class="tooltip">Logout</span> 
+          {{-- <span class="tooltip"><i class='bx bx-log-out' ></i><span class="tooltip">Logout</span></span> --}}
+        </button>
+    </form>
+          {{-- <i class='bx bx-log-out' ></i>
           <span class="links_name">Logout</span>
-        <span class="tooltip">Logout</span>
+        <span class="tooltip">Logout</span> --}}
       </li>
      {{-- <li class="profile">
          <div class="profile-details">

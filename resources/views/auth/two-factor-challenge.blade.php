@@ -1,9 +1,17 @@
+<link rel="shortcut icon" type="image/x-icon" href="{{ url("../images/PSU_logo.png") }}" />
+<title>Two Factor Authentication</title>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="#" title="Home"><img src="{{ url("../images/PSU_logo.png") }}"></a>
         </x-slot>
 
+        <div style="display: grid; place-items:center; padding: 5px; font-weight:bold;">
+            <h2>Pangasinan State University(San Carlos Campus)</h2>
+            <p>Mental Health Intervention</p>
+            <p>Two Factor Authentication Page</p>
+        </div>
+        
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
                 {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
@@ -17,7 +25,6 @@
 
             <form method="POST" action="{{ route('two-factor.login') }}">
                 @csrf
-
                 <div class="mt-4" x-show="! recovery">
                     <x-jet-label for="code" value="{{ __('Code') }}" />
                     <x-jet-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus x-ref="code" autocomplete="one-time-code" />

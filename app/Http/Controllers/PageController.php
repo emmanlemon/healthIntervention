@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Chat;
+use App\Models\Survey;
 use Auth;
 use DB;
 
@@ -14,6 +15,7 @@ class PageController extends Controller
         $role = Auth::user()->role;
         if($role == "0")
         {
+            $survey = DB::table('surveys')->orderBy('created_at', 'desc')->get();
             $column = [
                 'chats.id as id',
                 'message as message',
@@ -39,10 +41,11 @@ class PageController extends Controller
             ->orWhere('sender_id', Auth::user()->id)
             ->get();
             
-            return view('student.'.$pages.'.index' , compact('admin', 'chat'));
+            return view('student.'.$pages.'.index' , compact('admin', 'chat' , 'survey'));
         }
         else
         {
+            $survey = DB::table('surveys')->orderBy('created_at', 'desc')->get();
             $student = DB::table('users')->where('role', 0)->get();
             $column = [
                 'chat.sender_id',
@@ -60,9 +63,10 @@ class PageController extends Controller
             ->select($column)
             ->leftJoin('users', 'users.id' ,'chat.sender_id')
             ->where('users.role' , 0)
-            ->orderBy('chat.created_at', 'asc')->get();
+            ->orderBy('chat.created_at', 'desc')->get();
 
-            return view('admin.'.$pages.'.index', compact('student' , 'userChat'));
+
+            return view('admin.'.$pages.'.index', compact('student' , 'userChat', 'survey'));
         }
     }
 }

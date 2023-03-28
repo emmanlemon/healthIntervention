@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans antialiased text-blue-900" style="background-image: url('https://the-post-assets.sgp1.digitaloceanspaces.com/2022/06/CAMPUS-2-JUNE-24.png')">
             {{ $slot }}
         </div>
     </body>
